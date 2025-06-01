@@ -7,7 +7,7 @@ from pathlib import Path
 
 # ---------- CONFIG -----------------------------------------------------
 SOUND_DIR  = Path(__file__).with_name("sounds")   # ./sounds/ next to script
-FONT_SIZE  = 36
+FONT_SIZE  = 52
 TITLE_FONT = 72
 BG_COLOR   = (30, 30, 30)
 TEXT_COLOR = (240, 240, 240)
@@ -133,7 +133,7 @@ def main():
                 if idx < 0:
                     msg = f"Guess Round – SPACE to play clip 1 of {total}"
                 elif idx < total:
-                    msg = f"Guess Round – clip {idx+1}/{total}. SPACE=next  B=back  R=replay"
+                    msg = f"Guess Round – clip {idx+1}/{total}."
                 else:
                     msg = "Switching to reveal…"
             else:  # reveal
@@ -141,7 +141,7 @@ def main():
                     msg = "Reveal Round – SPACE to replay clip 1 with answer"
                 elif idx < total:
                     answer = sounds[idx].stem
-                    msg = f"Answer: {answer}  ({idx+1}/{total}) – SPACE=next  B=back  R=replay"
+                    msg = f"Answer: {answer}  ({idx+1}/{total})"
                 else:
                     msg = "All answers revealed! Press ESC to quit."
 
